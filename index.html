@@ -2,19 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efectivo Inmediato | Transforma tu Cupo</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -37,867 +29,335 @@
             }
         }
     </script>
-    
     <style>
-        /* ===== RESET ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #FFFFFF;
-            color: #111827;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            min-height: 100vh;
-        }
-        
-        /* ===== CONTENEDOR PRINCIPAL ===== */
-        .app-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px 40px;
-        }
-        
-        @media (max-width: 640px) {
-            .app-container {
-                padding: 0 16px 32px;
-            }
-        }
-        
-        /* ===== NAVBAR ===== */
-        .navbar {
-            background: #FFFFFF;
-            padding: 12px 0;
-            border-bottom: 1px solid #F3F4F6;
-            margin-bottom: 8px;
-        }
-        
-        .navbar-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .navbar-logo {
-            height: 40px;
-            width: auto;
-            max-width: 200px;
-            object-fit: contain;
-        }
-        
-        @media (max-width: 640px) {
-            .navbar {
-                padding: 10px 0;
-                margin-bottom: 4px;
-            }
-            .navbar-inner {
-                padding: 0 16px;
-            }
-            .navbar-logo {
-                height: 32px;
-                max-width: 160px;
-            }
-        }
-        
-        /* ===== HERO MINI (solo para contexto) ===== */
-        .hero-mini {
-            text-align: center;
-            padding: 8px 0 12px;
-            max-width: 768px;
-            margin: 0 auto;
-        }
-        
-        .hero-mini h1 {
-            font-size: 28px;
-            font-weight: 800;
-            color: #111827;
-            letter-spacing: -0.02em;
-            margin-bottom: 6px;
-        }
-        
-        .hero-mini h1 span {
-            color: #005af5;
-        }
-        
-        .hero-mini p {
-            font-size: 16px;
-            font-weight: 500;
-            color: #4B5563;
-            line-height: 1.5;
-        }
-        
-        .hero-mini p strong {
-            color: #111827;
-        }
-        
-        @media (max-width: 640px) {
-            .hero-mini h1 {
-                font-size: 20px;
-            }
-            .hero-mini p {
-                font-size: 14px;
-            }
-        }
-        
-        /* ===== ENCUESTA SECTION - PRIMERO EN LA VISTA ===== */
-        .survey-section {
-            max-width: 1024px;
-            margin: 0 auto;
-            padding-top: 4px;
-        }
-        
-        /* ===== SURVEY CARD ===== */
-        .survey-card {
-            background: #005af5;
-            border-radius: 24px;
-            padding: 32px 40px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 90, 245, 0.2);
-        }
-        
-        .survey-card::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 50%;
-        }
-        
-        .survey-card::after {
-            content: '';
-            position: absolute;
-            bottom: -80px;
-            left: -80px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 50%;
-        }
-        
-        .survey-card>* {
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Progress Bar */
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.25);
-            border-radius: 99px;
-            margin-bottom: 24px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: #FFFFFF;
-            border-radius: 99px;
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 20%;
-        }
-        
-        /* Steps */
+        /* Transiciones suaves para la encuesta paso a paso */
         .step-container {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease-in-out;
         }
-        
-        .step-hidden {
+        .hidden-step {
             display: none !important;
             opacity: 0;
-            transform: scale(0.96);
-            pointer-events: none;
-            height: 0;
-            overflow: hidden;
         }
-        
-        .step-visible {
+        .active-step {
             display: block !important;
             opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
-            height: auto;
-            overflow: visible;
-            animation: fadeStep 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        @keyframes fadeStep {
-            0% { opacity: 0; transform: scale(0.96) translateY(8px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        
-        /* Step Title */
-        .step-title {
-            font-size: 24px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
-        }
-        
-        @media (max-width: 640px) {
-            .step-title {
-                font-size: 20px;
-                margin-bottom: 18px;
-            }
-        }
-        
-        /* Buttons */
-        .survey-btn {
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-            touch-action: manipulation;
-            transition: all 0.2s ease;
-            width: 100%;
-            padding: 18px 24px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            color: white;
-            font-weight: 700;
-            font-size: 17px;
-            text-align: center;
-            backdrop-filter: blur(4px);
-            font-family: inherit;
-        }
-        
-        .survey-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .survey-btn:active {
-            transform: scale(0.97);
-        }
-        
-        .survey-btn .btn-icon {
-            margin-right: 10px;
-        }
-        
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 420px;
-            margin: 0 auto;
-        }
-        
-        /* Back Button */
-        .back-btn {
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 600;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
-            padding: 16px;
-            transition: color 0.2s ease;
-            font-family: inherit;
-            margin: 16px auto 0;
-            width: 100%;
-            max-width: 420px;
-        }
-        
-        .back-btn:hover {
-            color: white;
-        }
-        
-        /* Rejected Step */
-        .rejected-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-        }
-        
-        .rejected-icon i {
-            font-size: 36px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        .rejected-box {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 20px;
-            max-width: 420px;
-            margin: 16px auto;
-            text-align: left;
-        }
-        
-        .rejected-box p {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        .rejected-box strong {
-            color: white;
-        }
-        
-        /* Inputs */
-        .survey-input {
-            width: 100%;
-            padding: 16px 20px;
-            border: none;
-            border-radius: 16px;
-            font-size: 17px;
-            font-weight: 600;
-            color: #111827;
-            background: #FFFFFF;
-            outline: none;
-            font-family: inherit;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-        
-        .survey-input::placeholder {
-            color: #9CA3AF;
-            font-weight: 400;
-        }
-        
-        .survey-input:focus {
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
-        }
-        
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 420px;
-            margin: 0 auto 20px;
-        }
-        
-        /* Advisor Box */
-        .advisor-box {
-            background: rgba(0, 0, 0, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 20px;
-            max-width: 420px;
-            margin: 0 auto 24px;
-            text-align: center;
-        }
-        
-        .advisor-box p {
-            color: #FCD34D;
-            font-weight: 700;
-            font-size: 17px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            margin: 0;
-        }
-        
-        .advisor-box p i {
-            font-size: 28px;
-            margin-bottom: 4px;
-        }
-        
-        .advisor-box .advisor-code {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #3385ff;
-            padding: 4px 16px;
-            border-radius: 8px;
-            font-size: 13px;
-            letter-spacing: 0.1em;
-            margin-top: 4px;
-        }
-        
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto;
-            background: #111827;
-            color: white;
-            border: none;
-            padding: 18px 24px;
-            border-radius: 16px;
-            font-weight: 700;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: inherit;
-        }
-        
-        .whatsapp-btn:hover {
-            background: #1F2937;
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-        
-        .whatsapp-btn:active {
-            transform: scale(0.97);
-        }
-        
-        .whatsapp-btn i {
-            color: #22C55E;
-            font-size: 24px;
-        }
-        
-        /* Error Message */
-        .error-msg {
-            color: #FCA5A5;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            margin-top: 12px;
-            padding: 10px;
-            background: rgba(239, 68, 68, 0.15);
-            border-radius: 12px;
-            max-width: 420px;
-            margin-left: auto;
-            margin-right: auto;
-            display: none;
-        }
-        
-        .error-msg.show {
-            display: block;
-        }
-        
-        @media (max-width: 640px) {
-            .survey-card {
-                padding: 24px 20px;
-                border-radius: 20px;
-            }
-            .survey-btn {
-                padding: 14px 18px;
-                font-size: 15px;
-            }
-            .survey-input {
-                padding: 14px 16px;
-                font-size: 15px;
-            }
-            .whatsapp-btn {
-                padding: 16px 20px;
-                font-size: 16px;
-            }
-            .advisor-box p {
-                font-size: 15px;
-            }
-        }
-        
-        /* ===== SIDEBAR (Asesor) ===== */
-        .sidebar-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 32px;
-            align-items: start;
-        }
-        
-        .sidebar-card {
-            background: #F9FAFB;
-            border: 1px solid #F3F4F6;
-            border-radius: 24px;
-            padding: 28px;
-            text-align: center;
-        }
-        
-        .sidebar-card .badge {
-            display: inline-block;
-            background: #eef6ff;
-            color: #005af5;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 16px;
-            border-radius: 99px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-        }
-        
-        .sidebar-card .avatar {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #FFFFFF;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            margin: 0 auto 12px;
-        }
-        
-        .sidebar-card h5 {
-            font-size: 20px;
-            font-weight: 800;
-            color: #111827;
-            margin-bottom: 2px;
-        }
-        
-        .sidebar-card .role {
-            font-size: 14px;
-            font-weight: 600;
-            color: #6B7280;
-            margin-bottom: 16px;
-        }
-        
-        .sidebar-card .features {
-            text-align: left;
-            background: #FFFFFF;
-            border-radius: 16px;
-            padding: 16px 20px;
-            border: 1px solid #F3F4F6;
-        }
-        
-        .sidebar-card .features p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #374151;
-            padding: 6px 0;
-            margin: 0;
-        }
-        
-        .sidebar-card .features p:not(:last-child) {
-            border-bottom: 1px solid #F3F4F6;
-        }
-        
-        .sidebar-card .features i {
-            color: #005af5;
-            font-size: 16px;
-            width: 20px;
-            text-align: center;
-        }
-        
-        @media (max-width: 1024px) {
-            .sidebar-wrapper {
-                grid-template-columns: 1fr;
-                max-width: 680px;
-                margin: 0 auto;
-            }
-            .sidebar-card {
-                display: none;
-            }
-        }
-        
-        /* ===== FOOTER ===== */
-        .footer {
-            text-align: center;
-            padding: 24px 24px 12px;
-            border-top: 1px solid #F3F4F6;
-            margin-top: 32px;
-        }
-        
-        .footer p {
-            font-size: 12px;
-            color: #9CA3AF;
-            font-weight: 500;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-        
-        @media (max-width: 640px) {
-            .footer {
-                padding: 16px 16px 8px;
-                margin-top: 20px;
-            }
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-<!-- ============================================================ -->
-<!-- NAVBAR (MINI) -->
-<!-- ============================================================ -->
-<nav class="navbar">
-    <div class="navbar-inner">
-        <img src="https://i.postimg.cc/VLX9pLhG/3203c230-89ac-46cf-8164-477674486732.png" alt="Logo Addi Cupo" class="navbar-logo">
-    </div>
-</nav>
-
-<!-- ============================================================ -->
-<!-- CONTENEDOR PRINCIPAL -->
-<!-- ============================================================ -->
-<div class="app-container">
-
-    <!-- ========================================================== -->
-    <!-- HERO MINI (contexto rápido) -->
-    <!-- ========================================================== -->
-    <div class="hero-mini">
-        <h1>Transforma tu cupo en <span>efectivo real</span></h1>
-        <p>Desde <strong>$200.000</strong> hasta <strong>$15.000.000</strong> · Tasa <strong>1.1%</strong></p>
-    </div>
-
-    <!-- ========================================================== -->
-    <!-- ENCUESTA SECTION - ¡ESTO ES LO PRIMERO QUE SE VE! -->
-    <!-- ========================================================== -->
-    <section id="encuesta" class="survey-section">
-
-        <!-- Grid: Encuesta + Asesor -->
-        <div class="sidebar-wrapper">
-
-            <!-- ===== ENCUESTA CARD ===== -->
-            <div class="survey-card">
-                
-                <!-- Progress Bar -->
-                <div class="progress-bar">
-                    <div id="progressBar" class="progress-fill" style="width: 20%;"></div>
-                </div>
-                
-                <div id="surveyContainer">
-                    
-                    <!-- ===== PASO 1 - ¡ESTO ES LO PRIMERO QUE VEN! ===== -->
-                    <div id="step1" class="step-container step-visible">
-                        <h3 class="step-title">1. ¿Actualmente tienes un cupo disponible?</h3>
-                        <div class="btn-group">
-                            <button class="survey-btn survey-option" data-step="step1" data-key="has_cupo" data-value="A. Sí, tengo cupo disponible" data-next="step2">
-                                <i class="fas fa-check btn-icon"></i> A. Sí, tengo cupo disponible
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step1" data-key="has_cupo" data-value="B. No tengo cupo actualmente" data-next="step2">
-                                <i class="fas fa-times btn-icon"></i> B. No tengo cupo actualmente
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step1" data-key="has_cupo" data-value="C. No recuerdo" data-next="step5">
-                                <i class="fas fa-question btn-icon"></i> C. No recuerdo
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step1" data-key="has_cupo" data-value="D. Me encuentro reportado en datacredito" data-next="stepRejected">
-                                <i class="fas fa-exclamation-triangle btn-icon"></i> D. Me encuentro reportado en Datacrédito
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- ===== RECHAZADO ===== -->
-                    <div id="stepRejected" class="step-container step-hidden text-center">
-                        <div class="rejected-icon">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
-                        <h3 class="step-title">¡Gracias por tu visita!</h3>
-                        <p style="color: rgba(255,255,255,0.8); font-size: 17px; max-width: 420px; margin: 0 auto;">
-                            Por el momento, en esta campaña solo podemos realizar cambios a personas con <strong style="color: white;">cupos aprobados o preaprobados</strong>.
-                        </p>
-                        <div class="rejected-box">
-                            <p>
-                                Sabemos lo importante que es tener liquidez para ti, por eso <strong>próximamente estaremos lanzando una campaña exclusiva para personas reportadas en centrales de riesgo.</strong> ¡Mantente muy atento a nuestras novedades!
-                            </p>
-                        </div>
-                        <button class="back-btn back-option" data-target="step1">
-                            <i class="fas fa-arrow-left"></i> Volver al inicio
-                        </button>
-                    </div>
-                    
-                    <!-- ===== PASO 2 ===== -->
-                    <div id="step2" class="step-container step-hidden">
-                        <h3 id="step2Title" class="step-title">2. ¿Cuánto tienes disponible actualmente en tu cupo?</h3>
-                        <div class="btn-group">
-                            <button class="survey-btn survey-option" data-step="step2" data-key="amount" data-value="A. De $600.000 a $1.200.000" data-next="step3">
-                                A. De $600.000 a $1.200.000
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step2" data-key="amount" data-value="B. De $1.200.000 a $3.000.000" data-next="step3">
-                                B. De $1.200.000 a $3.000.000
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step2" data-key="amount" data-value="C. De $3.000.000 a $7.000.000" data-next="step3">
-                                C. De $3.000.000 a $7.000.000
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step2" data-key="amount" data-value="D. De $7.000.000 a $15.000.000" data-next="step3">
-                                D. De $7.000.000 a $15.000.000
-                            </button>
-                        </div>
-                        <button class="back-btn back-option" data-target="step1">
-                            <i class="fas fa-arrow-left"></i> Volver al paso anterior
-                        </button>
-                    </div>
-                    
-                    <!-- ===== PASO 3 ===== -->
-                    <div id="step3" class="step-container step-hidden">
-                        <h3 class="step-title">3. ¿Para qué necesitas el efectivo?</h3>
-                        <div class="btn-group">
-                            <button class="survey-btn survey-option" data-step="step3" data-key="purpose" data-value="A. Inversiones" data-next="step4">
-                                A. Inversiones
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step3" data-key="purpose" data-value="B. Pagar deudas" data-next="step4">
-                                B. Pagar deudas
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step3" data-key="purpose" data-value="C. Urgencias" data-next="step4">
-                                C. Urgencias
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step3" data-key="purpose" data-value="D. Otros" data-next="step4">
-                                D. Otros
-                            </button>
-                        </div>
-                        <button class="back-btn back-option" data-target="step2">
-                            <i class="fas fa-arrow-left"></i> Volver al paso anterior
-                        </button>
-                    </div>
-                    
-                    <!-- ===== PASO 4 ===== -->
-                    <div id="step4" class="step-container step-hidden">
-                        <h3 class="step-title">4. ¿A qué banco deseas hacer la transferencia?</h3>
-                        <div class="btn-group">
-                            <button class="survey-btn survey-option" data-step="step4" data-key="bank" data-value="A. Bancolombia" data-next="step5">
-                                A. Bancolombia
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step4" data-key="bank" data-value="B. Nequi / Daviplata" data-next="step5">
-                                B. Nequi / Daviplata
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step4" data-key="bank" data-value="C. Davivienda" data-next="step5">
-                                C. Davivienda
-                            </button>
-                            <button class="survey-btn survey-option" data-step="step4" data-key="bank" data-value="D. Otro banco" data-next="step5">
-                                D. Otro banco
-                            </button>
-                        </div>
-                        <button class="back-btn back-option" data-target="step3">
-                            <i class="fas fa-arrow-left"></i> Volver al paso anterior
-                        </button>
-                    </div>
-                    
-                    <!-- ===== PASO 5 ===== -->
-                    <div id="step5" class="step-container step-hidden">
-                        <h3 id="step5Title" class="step-title">5. Ingresa tus datos para continuar:</h3>
-                        <p id="step5Desc" style="color: rgba(255,255,255,0.8); text-align: center; font-size: 17px; font-weight: 500; margin-bottom: 20px;">
-                            Completa estos últimos datos para generar tu solicitud y pasarte con tu asesor por WhatsApp.
-                        </p>
-                        
-                        <div class="advisor-box">
-                            <p>
-                                <i class="fas fa-user-check"></i>
-                                <span>Serás atendido por tu asesor asignado: <strong style="color: white;">Carlos Mendoza</strong></span>
-                                <span class="advisor-code">CÓDIGO DE ASESOR: CM-7842</span>
-                            </p>
-                        </div>
-                        
-                        <div class="input-group">
-                            <input type="text" id="userName" placeholder="Nombre y apellido" class="survey-input">
-                            <input type="tel" id="userPhone" placeholder="Número de celular" class="survey-input">
-                            <input type="text" id="userCC" placeholder="Cédula de Ciudadanía (CC)" class="survey-input">
-                        </div>
-                        
-                        <button id="whatsappBtn" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Hablar con mi asesor
-                        </button>
-                        
-                        <p id="errorMsg" class="error-msg">Por favor, completa todos los campos requeridos.</p>
-                        
-                        <button class="back-btn back-option" data-target="step5">
-                            <i class="fas fa-arrow-left"></i> Volver al paso anterior
-                        </button>
-                    </div>
-                    
+    <!-- Navbar (Ya no es sticky) -->
+    <nav class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://i.postimg.cc/VLX9pLhG/3203c230-89ac-46cf-8164-477674486732.png" alt="Logo Addi Cupo" class="h-12 md:h-14 object-contain">
                 </div>
             </div>
-
-            <!-- ===== SIDEBAR (Asesor) ===== -->
-            <div class="sidebar-card">
-                <span class="badge">Asignado a ti</span>
-                
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80" alt="Asesor Financiero" class="avatar">
-                
-                <h5>Carlos Mendoza</h5>
-                <p class="role">Analista de Crédito Senior</p>
-                
-                <div class="features">
-                    <p><i class="fas fa-check-circle"></i> 100% legal y transparente</p>
-                    <p><i class="fas fa-bolt"></i> Dinero en 10 minutos</p>
-                    <p><i class="fas fa-lock"></i> Discreción absoluta</p>
-                </div>
-            </div>
-
         </div>
+    </nav>
 
+    <!-- Hero Section con la Promesa Fuerte -->
+    <section class="bg-white pt-10 pb-12 relative overflow-hidden flex flex-col items-center text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 tracking-tight leading-[1.1] mb-6">
+                Transforma tu cupo <br class="hidden md:block" /> en <span class="text-brand-500">efectivo real</span> hoy
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-medium mb-8 leading-relaxed">
+                Cambiamos tu cupo Addi <strong class="text-gray-900">desde $200.000 hasta 15 millones de pesos</strong> por dinero directo a tu cuenta bancaria a una tasa de <strong class="text-brand-500">1.1% (más bajo que el interés de los bancos)</strong>.
+            </p>
+            
+            <!-- Imagen Destacada Centrada -->
+            <div class="w-full max-w-lg mx-auto mb-12">
+                <img src="https://i.postimg.cc/W3Gsq1wy/image.png" alt="Cupo en efectivo Addi" class="w-full h-auto rounded-[2rem] shadow-lg border border-gray-100 object-cover" />
+            </div>
+            
+            <!-- Narración / Storytelling y Escasez (Neuromarketing) -->
+            <div class="bg-gray-50 border border-gray-200 rounded-[2rem] p-6 md:p-10 mb-10 shadow-sm max-w-4xl mx-auto text-lg md:text-xl text-gray-700 leading-relaxed space-y-5 text-center">
+                <p>
+                    ¿Sabías que miles de colombianos terminan reportados en <strong>Datacrédito o Centrales de Riesgo</strong> por hacer compras innecesarias? Por la presión de usar su cupo en tiendas aliadas, adquieren deudas de ropa o lujos que no les generan ningún beneficio.
+                </p>
+                <p>
+                    Por eso, como empresa adoptamos un sistema rápido de cambio directo. Ahora puedes tomar ese dinero, <strong>invertirlo en tu negocio, surtir tu mercancía o salir de deudas urgentes</strong> para sacarle mayor provecho.
+                </p>
+                <div class="bg-white p-6 rounded-3xl border-2 border-brand-100 shadow-sm mt-6">
+                    <p class="text-lg md:text-xl font-medium text-gray-800 leading-relaxed">
+                        Empezamos ayudando a 2.000 personas que hoy tienen un excelente historial de pago, ya que al invertir inteligentemente, liberan sus cupos y logran aumentos constantes. Hoy, <strong class="text-brand-500 text-2xl md:text-3xl block mt-3 text-center bg-brand-50 py-3 rounded-xl border border-brand-200 uppercase tracking-tight">abrimos nuestra segunda campaña con 1.000 cupos disponibles para cambios</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- STORYTELLING (AHORA ABAJO DE LA ENCUESTA) -->
-    <!-- ========================================================== -->
-    <div style="max-width: 896px; margin: 32px auto 0;">
-        <div style="background: #F9FAFB; border: 1px solid #F3F4F6; border-radius: 24px; padding: 28px 36px;">
-            <p style="font-size: 16px; line-height: 1.7; color: #4B5563; margin-bottom: 12px;">
-                <strong style="color: #111827;">¿Sabías que miles de colombianos</strong> terminan reportados en Datacrédito por compras innecesarias? Por la presión de usar su cupo en tiendas aliadas, adquieren deudas de ropa o lujos que no les generan ningún beneficio.
-            </p>
-            <p style="font-size: 16px; line-height: 1.7; color: #4B5563; margin-bottom: 12px;">
-                Por eso, adoptamos un sistema rápido de cambio directo. Ahora puedes tomar ese dinero, <strong style="color: #111827;">invertirlo en tu negocio, surtir tu mercancía o salir de deudas urgentes</strong> para sacarle mayor provecho.
-            </p>
-            <div style="background: #FFFFFF; border: 2px solid #d9ebff; border-radius: 16px; padding: 20px; margin-top: 12px; text-align: center;">
-                <p style="font-size: 16px; font-weight: 500; color: #1F2937; margin-bottom: 0;">
-                    Empezamos ayudando a 2.000 personas que hoy tienen un excelente historial de pago.
+    <!-- Sección de Historia / Checklist Verde -->
+    <section id="historia" class="py-12 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-10 text-center tracking-tight leading-tight">La forma más inteligente de tener liquidez</h2>
+            
+            <div class="space-y-8 bg-gray-50 p-6 md:p-10 rounded-[2rem] border border-gray-100 text-center md:text-left">
+                <!-- Checklist 1 -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                    <i class="fas fa-check-circle text-green-500 text-4xl flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Sin tiendas obligatorias</h3>
+                        <p class="text-lg text-gray-600 font-medium leading-relaxed">No te endeudes comprando ropa o lujos que no necesitas solo por gastar el cupo aprobado en establecimientos limitados.</p>
+                    </div>
+                </div>
+                
+                <!-- Checklist 2 -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                    <i class="fas fa-check-circle text-green-500 text-4xl flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Invierte en lo tuyo</h3>
+                        <p class="text-lg text-gray-600 font-medium leading-relaxed">Usa ese dinero en efectivo para surtir tu negocio propio, pagar proveedores o salir de deudas urgentes que no dan espera.</p>
+                    </div>
+                </div>
+                
+                <!-- Checklist 3 -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                    <i class="fas fa-check-circle text-green-500 text-4xl flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Efectivo inmediato</h3>
+                        <p class="text-lg text-gray-600 font-medium leading-relaxed">El proceso es 100% transparente. Compramos tu cupo y transferimos a tu cuenta bancaria de preferencia al instante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Interactiva: Encuesta y Autoridad -->
+    <section id="encuesta" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-500 font-bold tracking-wider uppercase text-sm mb-3 block">Cotización 100% Digital</span>
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Hemos preparado esto para ti</h2>
+                
+                <p class="mt-6 text-xl md:text-2xl text-gray-700 font-medium max-w-3xl mx-auto leading-relaxed">
+                    Llena los siguientes campos, te tomará menos de <strong class="text-gray-900 text-2xl">1 minuto</strong> para pasar con tu asesor a WhatsApp.
                 </p>
-                <span style="display: block; font-size: 22px; font-weight: 800; color: #005af5; background: #eef6ff; padding: 10px 20px; border-radius: 12px; border: 1px solid #d9ebff; margin-top: 10px; text-transform: uppercase; letter-spacing: -0.01em;">
-                    🚀 Segunda campaña: 1.000 cupos disponibles
-                </span>
+                
+                <div class="mt-10 flex flex-col gap-6 bg-brand-50 p-6 md:p-8 rounded-[2rem] border-2 border-brand-100 max-w-4xl mx-auto shadow-sm">
+                    <!-- Trato Justo -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-5">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-md border border-gray-100">
+                            <i class="fas fa-headset text-3xl text-brand-500"></i>
+                        </div>
+                        <p class="text-lg md:text-xl font-medium text-gray-800 leading-relaxed text-center md:text-left mt-2">
+                            <strong class="text-brand-600 text-xl md:text-2xl block mb-1">Asesoría Personalizada:</strong> Serás atendido por un experto en una llamada inicial para resolver cualquier duda que tengas sobre el proceso, explicándote todo paso a paso antes de avanzar.
+                        </p>
+                    </div>
+                    
+                    <!-- Seguridad Anti-Fraude -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-5 pt-6 border-t-2 border-brand-200/60 mt-2">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-md border border-gray-100">
+                            <i class="fas fa-shield-alt text-3xl text-green-500"></i>
+                        </div>
+                        <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center md:text-left font-medium mt-2">
+                            <strong class="text-gray-900 text-xl block mb-1">Seguridad y Transparencia:</strong> Puedes interactuar y aclarar tus inquietudes vía WhatsApp. Si decides proceder, la autorización se realizará a través de una llamada grabada con tu asesor para garantizar tu seguridad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Columna de la Encuesta -->
+                <div class="lg:col-span-2 bg-brand-500 rounded-[2rem] shadow-xl p-6 md:p-10 relative overflow-hidden text-white">
+                    
+                    <!-- Elementos decorativos -->
+                    <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-brand-400 rounded-full opacity-50 blur-3xl"></div>
+                    <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-brand-600 rounded-full opacity-50 blur-3xl"></div>
+
+                    <!-- Barra de progreso (5 pasos = 20% cada uno) -->
+                    <div class="w-full bg-brand-600/50 rounded-full h-3 mb-10 relative z-10">
+                        <div id="progress-bar" class="bg-white h-3 rounded-full transition-all duration-500 ease-out" style="width: 20%"></div>
+                    </div>
+
+                    <div id="survey-container" class="relative z-10">
+                        
+                        <!-- ========================================== -->
+                        <!-- PASO 1: ¡ESTE ES EL QUE EL USUARIO VE! -->
+                        <!-- ========================================== -->
+                        <div id="step-1" class="step-container active-step text-center">
+                            <h3 class="text-2xl md:text-3xl font-extrabold mb-8 tracking-tight leading-snug">1. ¿Actualmente tienes un cupo disponible?</h3>
+                            <div class="flex flex-col gap-4 max-w-md mx-auto">
+                                <button onclick="selectOption('has_cupo', 'A. Sí, tengo cupo disponible', 2)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    A. Sí, tengo cupo disponible
+                                </button>
+                                <button onclick="selectOption('has_cupo', 'B. No tengo cupo actualmente', 2)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    B. No tengo cupo actualmente
+                                </button>
+                                <button onclick="selectOption('has_cupo', 'C. No recuerdo', 2)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    C. No recuerdo
+                                </button>
+                                <button onclick="selectOption('has_cupo', 'D. Me encuentro reportado en datacredito', 'rejected')" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    D. Me encuentro reportado en Datacrédito
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pantalla de Rechazo Empático (Solo para reportados) -->
+                        <div id="step-rejected" class="step-container hidden-step text-center py-4">
+                            <div class="w-20 h-20 bg-brand-400/20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-100 shadow-inner">
+                                <i class="fas fa-hand-holding-heart text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-extrabold mb-4 tracking-tight text-white">¡Gracias por tu visita!</h3>
+                            <p class="text-white/90 mb-5 text-lg font-medium max-w-md mx-auto leading-relaxed">
+                                Por el momento, en esta campaña solo podemos realizar cambios a personas con <strong>cupos aprobados o preaprobados</strong>.
+                            </p>
+                            <div class="bg-gray-900/40 p-5 rounded-2xl border border-gray-700/50 max-w-md mx-auto mb-6 shadow-inner text-left">
+                                <p class="text-white/80 text-sm md:text-base leading-relaxed">
+                                    Sabemos lo importante que es tener liquidez para ti, por eso <strong>próximamente estaremos lanzando una campaña exclusiva para personas reportadas en centrales de riesgo.</strong> ¡Mantente muy atento a nuestras novedades!
+                                </p>
+                            </div>
+                            <button onclick="goToStep(1)" class="mt-4 text-white/80 hover:text-white font-bold text-base flex items-center justify-center gap-2 w-full transition-colors"><i class="fas fa-arrow-left"></i> Volver al inicio</button>
+                        </div>
+
+                        <!-- Paso 2: Monto disponible -->
+                        <div id="step-2" class="step-container hidden-step text-center">
+                            <h3 id="step-2-title" class="text-2xl md:text-3xl font-extrabold mb-8 tracking-tight leading-snug">2. ¿Cuánto tienes disponible actualmente en tu cupo?</h3>
+                            <div class="flex flex-col gap-4 max-w-md mx-auto">
+                                <button onclick="selectOption('amount', 'A. De $600.000 a $1.200.000', 3)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    A. De $600.000 a $1.200.000
+                                </button>
+                                <button onclick="selectOption('amount', 'B. De $1.200.000 a $3.000.000', 3)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    B. De $1.200.000 a $3.000.000
+                                </button>
+                                <button onclick="selectOption('amount', 'C. De $3.000.000 a $7.000.000', 3)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    C. De $3.000.000 a $7.000.000
+                                </button>
+                                <button onclick="selectOption('amount', 'D. De $7.000.000 a $15.000.000', 3)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    D. De $7.000.000 a $15.000.000
+                                </button>
+                            </div>
+                            <button onclick="goToStep(1)" class="mt-8 text-white/80 hover:text-white font-bold text-base flex items-center justify-center gap-2 w-full"><i class="fas fa-arrow-left"></i> Volver al paso anterior</button>
+                        </div>
+
+                        <!-- Paso 3: Motivo -->
+                        <div id="step-3" class="step-container hidden-step text-center">
+                            <h3 class="text-2xl md:text-3xl font-extrabold mb-8 tracking-tight leading-snug">3. ¿Para qué necesitas el efectivo?</h3>
+                            <div class="flex flex-col gap-4 max-w-md mx-auto">
+                                <button onclick="selectOption('purpose', 'A. Inversiones', 4)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    A. Inversiones
+                                </button>
+                                <button onclick="selectOption('purpose', 'B. Pagar deudas', 4)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    B. Pagar deudas
+                                </button>
+                                <button onclick="selectOption('purpose', 'C. Urgencias', 4)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    C. Urgencias
+                                </button>
+                                <button onclick="selectOption('purpose', 'D. Otros', 4)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    D. Otros
+                                </button>
+                            </div>
+                            <button onclick="goToStep(2)" class="mt-8 text-white/80 hover:text-white font-bold text-base flex items-center justify-center gap-2 w-full"><i class="fas fa-arrow-left"></i> Volver al paso anterior</button>
+                        </div>
+
+                        <!-- Paso 4: Banco -->
+                        <div id="step-4" class="step-container hidden-step text-center">
+                            <h3 class="text-2xl md:text-3xl font-extrabold mb-8 tracking-tight leading-snug">4. ¿A qué banco deseas hacer la transferencia?</h3>
+                            <div class="flex flex-col gap-4 max-w-md mx-auto">
+                                <button onclick="selectOption('bank', 'A. Bancolombia', 5)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    A. Bancolombia
+                                </button>
+                                <button onclick="selectOption('bank', 'B. Nequi / Daviplata', 5)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    B. Nequi / Daviplata
+                                </button>
+                                <button onclick="selectOption('bank', 'C. Davivienda', 5)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    C. Davivienda
+                                </button>
+                                <button onclick="selectOption('bank', 'D. Otro banco', 5)" class="survey-btn p-5 bg-white/10 hover:bg-white text-white hover:text-brand-900 border-2 border-white/20 hover:border-white rounded-xl transition-all font-bold text-lg text-center backdrop-blur-sm">
+                                    D. Otro banco
+                                </button>
+                            </div>
+                            <button onclick="goToStep(3)" class="mt-8 text-white/80 hover:text-white font-bold text-base flex items-center justify-center gap-2 w-full"><i class="fas fa-arrow-left"></i> Volver al paso anterior</button>
+                        </div>
+
+                        <!-- Paso 5: Final / Datos -->
+                        <div id="step-5" class="step-container hidden-step text-center py-4">
+                            
+                            <h3 id="step-5-title" class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">5. Ingresa tus datos para continuar:</h3>
+                            <p id="step-5-desc" class="text-white/90 mb-6 text-lg font-medium">Completa estos últimos datos para generar tu solicitud y pasarte con tu asesor por WhatsApp.</p>
+                            
+                            <div class="bg-gray-900/60 border-2 border-gray-700/50 p-5 rounded-2xl mb-8 max-w-md mx-auto shadow-inner">
+                                <p class="text-yellow-400 font-bold text-lg leading-relaxed flex flex-col items-center gap-2 text-center">
+                                    <i class="fas fa-user-check text-3xl mb-1"></i>
+                                    <span>Serás atendido por tu asesor asignado: <strong>Carlos Mendoza</strong></span>
+                                    <span class="bg-gray-800 border border-gray-600 text-brand-400 px-4 py-1.5 rounded-lg text-sm mt-2 tracking-widest">CÓDIGO DE ASESOR: CM-7842</span>
+                                </p>
+                            </div>
+                            
+                            <div class="max-w-md mx-auto space-y-4 mb-6">
+                                <input type="text" id="userName" placeholder="Nombre y apellido" class="w-full p-4 border-none rounded-xl text-gray-900 text-lg font-bold placeholder-gray-400 focus:ring-4 focus:ring-white/30 focus:outline-none shadow-inner">
+                                <input type="tel" id="userPhone" placeholder="Número de celular" class="w-full p-4 border-none rounded-xl text-gray-900 text-lg font-bold placeholder-gray-400 focus:ring-4 focus:ring-white/30 focus:outline-none shadow-inner">
+                                <input type="text" id="userCC" placeholder="Cédula de Ciudadanía (CC)" class="w-full p-4 border-none rounded-xl text-gray-900 text-lg font-bold placeholder-gray-400 focus:ring-4 focus:ring-white/30 focus:outline-none shadow-inner">
+                            </div>
+                            
+                            <button onclick="submitToWhatsApp()" class="w-full max-w-md mx-auto bg-gray-900 hover:bg-gray-800 text-white font-extrabold py-5 px-6 rounded-xl shadow-xl transition-transform hover:scale-105 flex items-center justify-center gap-3 text-lg">
+                                <i class="fab fa-whatsapp text-2xl text-green-400"></i> Hablar con mi asesor
+                            </button>
+                            
+                            <p id="error-msg" class="text-red-200 mt-3 hidden text-sm font-bold bg-red-900/50 p-2 rounded-lg max-w-md mx-auto">Por favor, completa todos los campos requeridos.</p>
+                            
+                            <button onclick="goBackFrom5()" class="mt-8 text-white/80 hover:text-white font-bold text-base flex items-center justify-center gap-2 w-full"><i class="fas fa-arrow-left"></i> Volver al paso anterior</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna de Autoridad -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gray-50 rounded-[2rem] p-6 text-center h-full flex flex-col justify-center relative border border-gray-100 shadow-sm">
+                        
+                        <span class="bg-brand-100 text-brand-600 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block mx-auto">Asignado a ti</span>
+                        
+                        <!-- Foto del Asesor -->
+                        <div class="relative w-28 h-28 mx-auto mb-5">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80" alt="Asesor Financiero" class="w-28 h-28 rounded-full border-4 border-white object-cover shadow-md">
+                            <div class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
+                        </div>
+                        
+                        <h5 class="text-xl font-extrabold text-gray-900 mb-1" id="advisor-name">Carlos Mendoza</h5>
+                        <p class="text-gray-500 text-sm font-bold mb-6">Analista de Crédito Senior</p>
+                        
+                        <div class="space-y-3 text-left bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                            <p class="flex items-start gap-3 text-sm font-bold text-gray-700">
+                                <i class="fas fa-check-circle text-brand-500 mt-0.5 text-lg"></i> 100% legal y transparente
+                            </p>
+                            <p class="flex items-start gap-3 text-sm font-bold text-gray-700">
+                                <i class="fas fa-bolt text-brand-500 mt-0.5 text-lg"></i> Dinero en 10 minutos
+                            </p>
+                            <p class="flex items-start gap-3 text-sm font-bold text-gray-700">
+                                <i class="fas fa-lock text-brand-500 mt-0.5 text-lg"></i> Discreción absoluta
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- ========================================================== -->
-    <!-- CHECKLIST (ABAJO) -->
-    <!-- ========================================================== -->
-    <div style="max-width: 768px; margin: 32px auto 0;">
-        <h2 style="font-size: 28px; font-weight: 800; color: #111827; text-align: center; margin-bottom: 24px; letter-spacing: -0.02em;">La forma más inteligente de tener liquidez</h2>
-        
-        <div style="background: #F9FAFB; border: 1px solid #F3F4F6; border-radius: 24px; padding: 28px 36px; display: flex; flex-direction: column; gap: 20px;">
-            
-            <div style="display: flex; align-items: flex-start; gap: 16px;">
-                <i class="fas fa-check-circle" style="color: #22C55E; font-size: 28px; flex-shrink: 0; margin-top: 2px;"></i>
-                <div>
-                    <h3 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 2px;">Sin tiendas obligatorias</h3>
-                    <p style="font-size: 16px; font-weight: 500; color: #4B5563; line-height: 1.5;">No te endeudes comprando ropa o lujos que no necesitas solo por gastar el cupo aprobado en establecimientos limitados.</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: flex-start; gap: 16px;">
-                <i class="fas fa-check-circle" style="color: #22C55E; font-size: 28px; flex-shrink: 0; margin-top: 2px;"></i>
-                <div>
-                    <h3 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 2px;">Invierte en lo tuyo</h3>
-                    <p style="font-size: 16px; font-weight: 500; color: #4B5563; line-height: 1.5;">Usa ese dinero en efectivo para surtir tu negocio propio, pagar proveedores o salir de deudas urgentes que no dan espera.</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: flex-start; gap: 16px;">
-                <i class="fas fa-check-circle" style="color: #22C55E; font-size: 28px; flex-shrink: 0; margin-top: 2px;"></i>
-                <div>
-                    <h3 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 2px;">Efectivo inmediato</h3>
-                    <p style="font-size: 16px; font-weight: 500; color: #4B5563; line-height: 1.5;">El proceso es 100% transparente. Compramos tu cupo y transferimos a tu cuenta bancaria de preferencia al instante.</p>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-8 border-t border-gray-200 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-xs text-gray-400 mt-2 max-w-xl mx-auto font-medium">Este servicio está sujeto a validación de identidad y disponibilidad del cupo de la plataforma origen.</p>
         </div>
-    </div>
-
-    <!-- ========================================================== -->
-    <!-- FOOTER -->
-    <!-- ========================================================== -->
-    <footer class="footer">
-        <p>Este servicio está sujeto a validación de identidad y disponibilidad del cupo de la plataforma origen.</p>
     </footer>
 
-</div>
-
-<!-- ============================================================ -->
-<!-- JAVASCRIPT -->
-<!-- ============================================================ -->
-<script>
-    (function() {
-        'use strict';
-        
-        var surveyData = {
+    <!-- Lógica de la Encuesta y WhatsApp -->
+    <script>
+        let surveyData = {
             has_cupo: '',
             amount: '',
             purpose: '',
@@ -906,226 +366,153 @@
             phone: '',
             cc: ''
         };
-        
-        // ===== FUNCIÓN PARA MOSTRAR PASOS =====
-        function showStep(stepId) {
-            var containers = document.querySelectorAll('.step-container');
-            for (var i = 0; i < containers.length; i++) {
-                var el = containers[i];
-                el.className = el.className.replace(/\bstep-visible\b/g, '');
-                if (el.className.indexOf('step-hidden') === -1) {
-                    el.className += ' step-hidden';
-                }
-            }
-            
-            var targetEl = document.getElementById(stepId);
-            if (targetEl) {
-                targetEl.className = targetEl.className.replace(/\bstep-hidden\b/g, '');
-                targetEl.className += ' step-visible';
-            }
-            
-            updateProgress(stepId);
-        }
-        
-        // ===== ACTUALIZAR BARRA DE PROGRESO =====
-        function updateProgress(stepId) {
-            var progress = 0;
-            var progressBar = document.getElementById('progressBar');
-            if (!progressBar) return;
-            
-            if (stepId === 'stepRejected') {
-                progress = 100;
-            } else if (stepId === 'step1') {
-                progress = 20;
-            } else if (stepId === 'step2') {
-                progress = 40;
-            } else if (stepId === 'step3') {
-                progress = 60;
-            } else if (stepId === 'step4') {
-                progress = 80;
-            } else if (stepId === 'step5') {
-                progress = 100;
-            }
-            
-            progressBar.style.width = progress + '%';
-        }
-        
-        // ===== MANEJAR SELECCIÓN =====
-        function handleSelection(stepId, key, value, nextStep) {
+
+        function selectOption(key, value, nextStep) {
             surveyData[key] = value;
             
+            // Lógica inteligente de ramificación (Branching)
             if (key === 'has_cupo') {
-                var step2Title = document.getElementById('step2Title');
-                var step5Title = document.getElementById('step5Title');
-                var step5Desc = document.getElementById('step5Desc');
-                
-                if (value.indexOf('A.') === 0) {
-                    if (step2Title) step2Title.innerText = '2. ¿Cuánto tienes disponible actualmente en tu cupo?';
+                if (value.startsWith('A.')) {
+                    // Flujo Normal: Tiene Cupo
+                    document.getElementById('step-2-title').innerText = '2. ¿Cuánto tienes disponible actualmente en tu cupo?';
                     resetStep5Text();
-                    showStep('step2');
-                    return;
-                } else if (value.indexOf('B.') === 0) {
-                    if (step2Title) step2Title.innerText = '2. ¿Qué monto te gustaría solicitar?';
+                    goToStep(2);
+                } else if (value.startsWith('B.')) {
+                    // Flujo B: No tiene, quiere solicitar
+                    document.getElementById('step-2-title').innerText = '2. ¿Qué monto te gustaría solicitar?';
                     resetStep5Text();
-                    showStep('step2');
-                    return;
-                } else if (value.indexOf('C.') === 0) {
-                    if (step5Title) step5Title.innerText = 'Verificación de Estado';
-                    if (step5Desc) step5Desc.innerHTML = 'Completa tus datos para que tu asesor asignado <strong style="color:white;">verifique tu perfil en el sistema</strong> y evalúe la probabilidad de aprobación de tu cupo de forma segura.';
-                    showStep('step5');
-                    return;
-                } else if (value.indexOf('D.') === 0) {
-                    showStep('stepRejected');
-                    return;
+                    goToStep(2);
+                } else if (value.startsWith('C.')) {
+                    // Flujo C: No recuerda (Verificación directa)
+                    document.getElementById('step-5-title').innerText = 'Verificación de Estado';
+                    document.getElementById('step-5-desc').innerHTML = 'Completa tus datos para que tu asesor asignado <strong>verifique tu perfil en el sistema</strong> y evalúe la probabilidad de aprobación de tu cupo de forma segura.';
+                    goToStep(5);
+                } else if (value.startsWith('D.')) {
+                    // Flujo D: Reportado (Rechazo empático)
+                    goToStep('rejected');
                 }
-            }
-            
-            if (nextStep) {
-                showStep(nextStep);
-            }
-        }
-        
-        // ===== RESETEAR TEXTO PASO 5 =====
-        function resetStep5Text() {
-            var titleEl = document.getElementById('step5Title');
-            var descEl = document.getElementById('step5Desc');
-            if (titleEl) titleEl.innerText = '5. Ingresa tus datos para continuar:';
-            if (descEl) descEl.innerText = 'Completa estos últimos datos para generar tu solicitud y pasarte con tu asesor por WhatsApp.';
-        }
-        
-        // ===== VOLVER DESDE PASO 5 =====
-        function goBackFromStep5() {
-            if (surveyData.has_cupo.indexOf('C.') === 0) {
-                showStep('step1');
             } else {
-                showStep('step4');
+                // Para las demás preguntas, sigue el flujo normal indicado
+                goToStep(nextStep);
             }
         }
-        
-        // ===== ENVIAR A WHATSAPP =====
+
+        // Función para resetear textos por si el usuario se devuelve
+        function resetStep5Text() {
+            document.getElementById('step-5-title').innerText = '5. Ingresa tus datos para continuar:';
+            document.getElementById('step-5-desc').innerText = 'Completa estos últimos datos para generar tu solicitud y pasarte con tu asesor por WhatsApp.';
+        }
+
+        // Lógica especial para el botón de "Volver" del Paso 5
+        function goBackFrom5() {
+            if (surveyData.has_cupo.startsWith('C.')) {
+                // Si viene del flujo C (No recuerdo), debe volver al inicio porque saltó pasos
+                goToStep(1);
+            } else {
+                // Si viene de A o B, vuelve al paso del banco
+                goToStep(4);
+            }
+        }
+
+        function goToStep(step) {
+            document.querySelectorAll('.step-container').forEach(el => {
+                el.classList.remove('active-step');
+                el.classList.add('hidden-step');
+            });
+            
+            const currentStepEl = document.getElementById(`step-${step}`);
+            if(currentStepEl) {
+                currentStepEl.classList.remove('hidden-step');
+                currentStepEl.classList.add('active-step');
+            }
+
+            // Barra de progreso inteligente
+            let progress = 0;
+            if (step === 'rejected') progress = 100;
+            else if (step === 1) progress = 20;
+            else if (step === 2) progress = 40;
+            else if (step === 3) progress = 60;
+            else if (step === 4) progress = 80;
+            else if (step === 5) progress = 100;
+            
+            const progressBar = document.getElementById('progress-bar');
+            if(progressBar) {
+                progressBar.style.width = `${progress}%`;
+            }
+        }
+
         function submitToWhatsApp() {
-            var nameInput = document.getElementById('userName');
-            var phoneInput = document.getElementById('userPhone');
-            var ccInput = document.getElementById('userCC');
+            const nameInput = document.getElementById('userName').value.trim();
+            const phoneInput = document.getElementById('userPhone').value.trim();
+            const ccInput = document.getElementById('userCC').value.trim();
             
-            var name = nameInput ? nameInput.value.trim() : '';
-            var phone = phoneInput ? phoneInput.value.trim() : '';
-            var cc = ccInput ? ccInput.value.trim() : '';
+            const errorMsg = document.getElementById('error-msg');
+            const btn = document.querySelector('button[onclick="submitToWhatsApp()"]');
             
-            var errorMsg = document.getElementById('errorMsg');
-            var btn = document.getElementById('whatsappBtn');
-            
-            if (!name || !phone || !cc) {
-                if (errorMsg) {
-                    errorMsg.className = 'error-msg show';
-                }
+            // Validación
+            if (!nameInput || !phoneInput || !ccInput) {
+                errorMsg.classList.remove('hidden');
                 return;
             }
+            errorMsg.classList.add('hidden');
             
-            if (errorMsg) {
-                errorMsg.className = 'error-msg';
-            }
-            
-            surveyData.name = name;
-            surveyData.phone = phone;
-            surveyData.cc = cc;
-            
-            var summaryBlock = '';
-            var hasCupo = surveyData.has_cupo || '';
-            
-            if (hasCupo.indexOf('A.') === 0) {
-                summaryBlock = '1️⃣ *¿Tiene cupo?:* Sí\n2️⃣ *Monto disponible:* ' + surveyData.amount + '\n3️⃣ *Motivo:* ' + surveyData.purpose + '\n4️⃣ *Banco:* ' + surveyData.bank;
-            } else if (hasCupo.indexOf('B.') === 0) {
-                summaryBlock = '1️⃣ *¿Tiene cupo?:* No, desea solicitar\n2️⃣ *Monto deseado:* ' + surveyData.amount + '\n3️⃣ *Motivo:* ' + surveyData.purpose + '\n4️⃣ *Banco:* ' + surveyData.bank;
-            } else if (hasCupo.indexOf('C.') === 0) {
-                summaryBlock = '1️⃣ *¿Tiene cupo?:* No recuerda (Requiere verificación de probabilidad en sistema)';
-            }
-            
-            var message = '¡Hola Carlos! (Cód: CM-7842) Vengo de la página web y quiero asesoría.\n\n*📋 Resumen de mi Solicitud:*\n\n' + summaryBlock + '\n\n*👤 Mis Datos:*\n- *Nombre:* ' + surveyData.name + '\n- *Celular:* ' + surveyData.phone + '\n- *Cédula (CC):* ' + surveyData.cc + '\n\nQuedo atento(a) para recibir tu llamada/mensaje.';
-            
-            var encodedMessage = encodeURIComponent(message);
-            var phoneNumber = "573005287488"; // <-- CAMBIA ESTE NÚMERO
-            
-            var waUrl = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodedMessage;
-            
-            if (btn) {
-                var originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abriendo chat...';
-                btn.style.opacity = '0.7';
-                btn.style.pointerEvents = 'none';
-                
-                setTimeout(function() {
-                    btn.innerHTML = originalHTML;
-                    btn.style.opacity = '1';
-                    btn.style.pointerEvents = 'auto';
-                    
-                    try {
-                        var waWindow = window.open(waUrl, '_blank');
-                        if (!waWindow || waWindow.closed || typeof waWindow.closed === 'undefined') {
-                            window.location.href = waUrl;
-                        }
-                    } catch(e) {
-                        window.location.href = waUrl;
-                    }
-                }, 700);
-            }
-        }
-        
-        // ===== INICIALIZAR =====
-        function init() {
-            // Botones de la encuesta
-            var surveyBtns = document.querySelectorAll('.survey-option');
-            for (var i = 0; i < surveyBtns.length; i++) {
-                (function(btn) {
-                    btn.addEventListener('click', function(e) {
-                        var step = this.getAttribute('data-step') || '';
-                        var key = this.getAttribute('data-key') || '';
-                        var value = this.getAttribute('data-value') || '';
-                        var next = this.getAttribute('data-next') || '';
-                        
-                        if (key && value) {
-                            handleSelection(step, key, value, next);
-                        }
-                    });
-                })(surveyBtns[i]);
-            }
-            
-            // Botones "Volver"
-            var backBtns = document.querySelectorAll('.back-option');
-            for (var j = 0; j < backBtns.length; j++) {
-                (function(btn) {
-                    btn.addEventListener('click', function(e) {
-                        var target = this.getAttribute('data-target') || '';
-                        if (target === 'step5') {
-                            goBackFromStep5();
-                        } else if (target) {
-                            showStep(target);
-                        }
-                    });
-                })(backBtns[j]);
-            }
-            
-            // Botón WhatsApp
-            var waBtn = document.getElementById('whatsappBtn');
-            if (waBtn) {
-                waBtn.addEventListener('click', function(e) {
-                    submitToWhatsApp();
-                });
-            }
-            
-            // Mostrar paso 1
-            showStep('step1');
-        }
-        
-        // ===== EJECUTAR =====
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            init();
-        } else {
-            document.addEventListener('DOMContentLoaded', init);
-        }
-        
-    })();
-</script>
+            surveyData.name = nameInput;
+            surveyData.phone = phoneInput;
+            surveyData.cc = ccInput;
 
+            // Construir el resumen dinámico basado en lo que respondió en el paso 1
+            let summaryBlock = '';
+            if (surveyData.has_cupo.startsWith('A.')) {
+                summaryBlock = `1️⃣ *¿Tiene cupo?:* Sí\n2️⃣ *Monto disponible:* ${surveyData.amount}\n3️⃣ *Motivo:* ${surveyData.purpose}\n4️⃣ *Banco:* ${surveyData.bank}`;
+            } else if (surveyData.has_cupo.startsWith('B.')) {
+                summaryBlock = `1️⃣ *¿Tiene cupo?:* No, desea solicitar\n2️⃣ *Monto deseado:* ${surveyData.amount}\n3️⃣ *Motivo:* ${surveyData.purpose}\n4️⃣ *Banco:* ${surveyData.bank}`;
+            } else if (surveyData.has_cupo.startsWith('C.')) {
+                summaryBlock = `1️⃣ *¿Tiene cupo?:* No recuerda (Requiere verificación de probabilidad en sistema)`;
+            }
+
+            // Construcción del mensaje final
+            const message = `¡Hola Carlos! (Cód: CM-7842) Vengo de la página web y quiero asesoría.\n\n*📋 Resumen de mi Solicitud:*\n\n${summaryBlock}\n\n*👤 Mis Datos:*\n- *Nombre:* ${surveyData.name}\n- *Celular:* ${surveyData.phone}\n- *Cédula (CC):* ${surveyData.cc}\n\nQuedo atento(a) para recibir tu llamada/mensaje.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const phoneNumber = "573005287488"; // Número de celular actualizado
+            
+            // Abrir WhatsApp automáticamente
+            const waUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+            // Efecto visual de carga
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin text-2xl text-white"></i> Abriendo chat...';
+            btn.classList.add('bg-gray-800');
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.classList.remove('bg-gray-800');
+                window.open(waUrl, '_blank');
+            }, 800);
+        }
+
+        // =============================================================
+        // 👇 SCROLL EXACTO AL PASO 1 DE LA ENCUESTA
+        // =============================================================
+        // Cuando la página cargue, hacer scroll suave exactamente al paso 1
+        window.addEventListener('load', function() {
+            // Buscar el contenedor del paso 1
+            var step1 = document.getElementById('step-1');
+            if (step1) {
+                // Esperar un momento para que todo se renderice
+                setTimeout(function() {
+                    // Calcular la posición exacta del paso 1
+                    var rect = step1.getBoundingClientRect();
+                    var scrollTarget = window.pageYOffset + rect.top - 30; // 30px de margen superior
+                    
+                    window.scrollTo({
+                        top: scrollTarget,
+                        behavior: 'smooth'
+                    });
+                }, 500);
+            }
+        });
+        // =============================================================
+    </script>
 </body>
 </html>
