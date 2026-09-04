@@ -71,9 +71,9 @@
         /* ===== NAVBAR ===== */
         .navbar {
             background: #FFFFFF;
-            padding: 16px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #F3F4F6;
-            margin-bottom: 32px;
+            margin-bottom: 8px;
         }
         
         .navbar-inner {
@@ -86,358 +86,71 @@
         }
         
         .navbar-logo {
-            height: 48px;
+            height: 40px;
             width: auto;
-            max-width: 240px;
+            max-width: 200px;
             object-fit: contain;
         }
         
         @media (max-width: 640px) {
             .navbar {
-                padding: 12px 0;
-                margin-bottom: 20px;
+                padding: 10px 0;
+                margin-bottom: 4px;
             }
             .navbar-inner {
                 padding: 0 16px;
             }
             .navbar-logo {
-                height: 36px;
-                max-width: 180px;
+                height: 32px;
+                max-width: 160px;
             }
         }
         
-        /* ===== HERO SECTION ===== */
-        .hero-section {
+        /* ===== HERO MINI (solo para contexto) ===== */
+        .hero-mini {
             text-align: center;
-            padding: 16px 0 32px;
-        }
-        
-        .hero-title {
-            font-size: 42px;
-            font-weight: 900;
-            line-height: 1.1;
-            color: #111827;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-        }
-        
-        .hero-title span {
-            color: #005af5;
-        }
-        
-        .hero-subtitle {
-            font-size: 20px;
-            font-weight: 500;
-            color: #4B5563;
-            max-width: 720px;
-            margin: 0 auto 24px;
-            line-height: 1.6;
-        }
-        
-        .hero-subtitle strong {
-            color: #111827;
-        }
-        
-        .hero-image-wrapper {
-            max-width: 560px;
-            margin: 0 auto 32px;
-        }
-        
-        .hero-image-wrapper img {
-            width: 100%;
-            height: auto;
-            border-radius: 24px;
-            border: 1px solid #F3F4F6;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-        }
-        
-        /* ===== STORY CARD ===== */
-        .story-card {
-            background: #F9FAFB;
-            border: 1px solid #F3F4F6;
-            border-radius: 24px;
-            padding: 32px 40px;
-            max-width: 896px;
-            margin: 0 auto 32px;
-        }
-        
-        .story-card p {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #4B5563;
-            margin-bottom: 16px;
-        }
-        
-        .story-card p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .story-card strong {
-            color: #111827;
-        }
-        
-        .story-highlight {
-            background: #FFFFFF;
-            border: 2px solid #d9ebff;
-            border-radius: 20px;
-            padding: 24px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .story-highlight p {
-            font-size: 18px;
-            font-weight: 500;
-            color: #1F2937;
-            margin-bottom: 0;
-        }
-        
-        .story-highlight .highlight-number {
-            display: block;
-            font-size: 28px;
-            font-weight: 800;
-            color: #005af5;
-            background: #eef6ff;
-            padding: 12px 24px;
-            border-radius: 12px;
-            border: 1px solid #d9ebff;
-            margin-top: 12px;
-            text-transform: uppercase;
-            letter-spacing: -0.01em;
-        }
-        
-        @media (max-width: 640px) {
-            .story-card {
-                padding: 20px;
-                border-radius: 20px;
-            }
-            .story-card p {
-                font-size: 16px;
-            }
-            .story-highlight p {
-                font-size: 16px;
-            }
-            .story-highlight .highlight-number {
-                font-size: 20px;
-                padding: 10px 16px;
-            }
-            .hero-title {
-                font-size: 28px;
-            }
-            .hero-subtitle {
-                font-size: 17px;
-            }
-        }
-        
-        /* ===== CHECKLIST ===== */
-        .checklist-section {
+            padding: 8px 0 12px;
             max-width: 768px;
-            margin: 0 auto 40px;
-        }
-        
-        .checklist-title {
-            font-size: 32px;
-            font-weight: 800;
-            color: #111827;
-            text-align: center;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
-        }
-        
-        .checklist-grid {
-            background: #F9FAFB;
-            border: 1px solid #F3F4F6;
-            border-radius: 24px;
-            padding: 32px 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-        
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-        
-        .checklist-item .icon {
-            color: #22C55E;
-            font-size: 32px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        
-        .checklist-item h3 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 4px;
-        }
-        
-        .checklist-item p {
-            font-size: 17px;
-            font-weight: 500;
-            color: #4B5563;
-            line-height: 1.5;
-        }
-        
-        @media (max-width: 640px) {
-            .checklist-title {
-                font-size: 24px;
-            }
-            .checklist-grid {
-                padding: 20px;
-                border-radius: 20px;
-                gap: 20px;
-            }
-            .checklist-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .checklist-item h3 {
-                font-size: 19px;
-            }
-            .checklist-item p {
-                font-size: 15px;
-            }
-        }
-        
-        /* ===== ENCUESTA SECTION ===== */
-        .survey-section {
-            max-width: 1024px;
             margin: 0 auto;
         }
         
-        .survey-header {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        
-        .survey-header .badge {
-            display: inline-block;
-            font-weight: 700;
-            color: #005af5;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-        
-        .survey-header h2 {
-            font-size: 36px;
+        .hero-mini h1 {
+            font-size: 28px;
             font-weight: 800;
             color: #111827;
             letter-spacing: -0.02em;
+            margin-bottom: 6px;
         }
         
-        .survey-header p {
-            font-size: 20px;
+        .hero-mini h1 span {
+            color: #005af5;
+        }
+        
+        .hero-mini p {
+            font-size: 16px;
             font-weight: 500;
             color: #4B5563;
-            max-width: 640px;
-            margin: 12px auto 0;
-        }
-        
-        .survey-header p strong {
-            color: #111827;
-            font-size: 24px;
-        }
-        
-        /* ===== BENEFITS BOX ===== */
-        .benefits-box {
-            background: #eef6ff;
-            border: 2px solid #d9ebff;
-            border-radius: 24px;
-            padding: 28px 36px;
-            max-width: 768px;
-            margin: 0 auto 32px;
-        }
-        
-        .benefits-box .benefit {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 12px 0;
-        }
-        
-        .benefits-box .benefit:first-child {
-            padding-top: 0;
-        }
-        
-        .benefits-box .benefit:last-child {
-            padding-bottom: 0;
-            border-top: 2px solid rgba(0, 90, 245, 0.15);
-            margin-top: 4px;
-        }
-        
-        .benefits-box .icon-circle {
-            width: 56px;
-            height: 56px;
-            background: #FFFFFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid #F3F4F6;
-        }
-        
-        .benefits-box .icon-circle i {
-            font-size: 24px;
-            color: #005af5;
-        }
-        
-        .benefits-box .icon-circle i.fa-shield-alt {
-            color: #22C55E;
-        }
-        
-        .benefits-box .benefit-text strong {
-            display: block;
-            font-size: 18px;
-            color: #005af5;
-        }
-        
-        .benefits-box .benefit-text p {
-            font-size: 17px;
-            color: #1F2937;
-            font-weight: 500;
             line-height: 1.5;
-            margin: 0;
+        }
+        
+        .hero-mini p strong {
+            color: #111827;
         }
         
         @media (max-width: 640px) {
-            .survey-header h2 {
-                font-size: 26px;
-            }
-            .survey-header p {
-                font-size: 17px;
-            }
-            .survey-header p strong {
+            .hero-mini h1 {
                 font-size: 20px;
             }
-            .benefits-box {
-                padding: 20px;
+            .hero-mini p {
+                font-size: 14px;
             }
-            .benefits-box .benefit {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .benefits-box .benefit-text strong {
-                font-size: 16px;
-            }
-            .benefits-box .benefit-text p {
-                font-size: 15px;
-            }
-            .benefits-box .icon-circle {
-                width: 48px;
-                height: 48px;
-            }
-            .benefits-box .icon-circle i {
-                font-size: 20px;
-            }
+        }
+        
+        /* ===== ENCUESTA SECTION - PRIMERO EN LA VISTA ===== */
+        .survey-section {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding-top: 4px;
         }
         
         /* ===== SURVEY CARD ===== */
@@ -484,7 +197,7 @@
             height: 6px;
             background: rgba(255, 255, 255, 0.25);
             border-radius: 99px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             overflow: hidden;
         }
         
@@ -537,6 +250,7 @@
         @media (max-width: 640px) {
             .step-title {
                 font-size: 20px;
+                margin-bottom: 18px;
             }
         }
         
@@ -889,9 +603,9 @@
         /* ===== FOOTER ===== */
         .footer {
             text-align: center;
-            padding: 32px 24px 16px;
+            padding: 24px 24px 12px;
             border-top: 1px solid #F3F4F6;
-            margin-top: 40px;
+            margin-top: 32px;
         }
         
         .footer p {
@@ -904,8 +618,8 @@
         
         @media (max-width: 640px) {
             .footer {
-                padding: 24px 16px 12px;
-                margin-top: 24px;
+                padding: 16px 16px 8px;
+                margin-top: 20px;
             }
         }
     </style>
@@ -913,7 +627,7 @@
 <body>
 
 <!-- ============================================================ -->
-<!-- NAVBAR -->
+<!-- NAVBAR (MINI) -->
 <!-- ============================================================ -->
 <nav class="navbar">
     <div class="navbar-inner">
@@ -927,108 +641,17 @@
 <div class="app-container">
 
     <!-- ========================================================== -->
-    <!-- HERO SECTION -->
+    <!-- HERO MINI (contexto rápido) -->
     <!-- ========================================================== -->
-    <section class="hero-section">
-        <h1 class="hero-title">
-            Transforma tu cupo <br>en <span>efectivo real</span> hoy
-        </h1>
-        
-        <p class="hero-subtitle">
-            Cambiamos tu cupo Addi <strong>desde $200.000 hasta 15 millones de pesos</strong> por dinero directo a tu cuenta bancaria a una tasa de <strong>1.1% (más bajo que el interés de los bancos)</strong>.
-        </p>
-        
-        <div class="hero-image-wrapper">
-            <img src="https://i.postimg.cc/W3Gsq1wy/image.png" alt="Cupo en efectivo Addi">
-        </div>
-        
-        <!-- Storytelling -->
-        <div class="story-card">
-            <p>
-                ¿Sabías que miles de colombianos terminan reportados en <strong>Datacrédito o Centrales de Riesgo</strong> por hacer compras innecesarias? Por la presión de usar su cupo en tiendas aliadas, adquieren deudas de ropa o lujos que no les generan ningún beneficio.
-            </p>
-            <p>
-                Por eso, como empresa adoptamos un sistema rápido de cambio directo. Ahora puedes tomar ese dinero, <strong>invertirlo en tu negocio, surtir tu mercancía o salir de deudas urgentes</strong> para sacarle mayor provecho.
-            </p>
-            <div class="story-highlight">
-                <p>
-                    Empezamos ayudando a 2.000 personas que hoy tienen un excelente historial de pago, ya que al invertir inteligentemente, liberan sus cupos y logran aumentos constantes.
-                </p>
-                <span class="highlight-number">
-                    🚀 Abrimos nuestra segunda campaña con 1.000 cupos disponibles para cambios
-                </span>
-            </div>
-        </div>
-    </section>
+    <div class="hero-mini">
+        <h1>Transforma tu cupo en <span>efectivo real</span></h1>
+        <p>Desde <strong>$200.000</strong> hasta <strong>$15.000.000</strong> · Tasa <strong>1.1%</strong></p>
+    </div>
 
     <!-- ========================================================== -->
-    <!-- CHECKLIST SECTION -->
+    <!-- ENCUESTA SECTION - ¡ESTO ES LO PRIMERO QUE SE VE! -->
     <!-- ========================================================== -->
-    <section class="checklist-section">
-        <h2 class="checklist-title">La forma más inteligente de tener liquidez</h2>
-        
-        <div class="checklist-grid">
-            <div class="checklist-item">
-                <i class="fas fa-check-circle icon"></i>
-                <div>
-                    <h3>Sin tiendas obligatorias</h3>
-                    <p>No te endeudes comprando ropa o lujos que no necesitas solo por gastar el cupo aprobado en establecimientos limitados.</p>
-                </div>
-            </div>
-            
-            <div class="checklist-item">
-                <i class="fas fa-check-circle icon"></i>
-                <div>
-                    <h3>Invierte en lo tuyo</h3>
-                    <p>Usa ese dinero en efectivo para surtir tu negocio propio, pagar proveedores o salir de deudas urgentes que no dan espera.</p>
-                </div>
-            </div>
-            
-            <div class="checklist-item">
-                <i class="fas fa-check-circle icon"></i>
-                <div>
-                    <h3>Efectivo inmediato</h3>
-                    <p>El proceso es 100% transparente. Compramos tu cupo y transferimos a tu cuenta bancaria de preferencia al instante.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================================== -->
-    <!-- ENCUESTA SECTION -->
-    <!-- ========================================================== -->
-    <section class="survey-section">
-
-        <div class="survey-header">
-            <span class="badge">Cotización 100% Digital</span>
-            <h2>Hemos preparado esto para ti</h2>
-            <p>
-                Llena los siguientes campos, te tomará menos de <strong>1 minuto</strong> para pasar con tu asesor a WhatsApp.
-            </p>
-        </div>
-
-        <!-- Benefits Box -->
-        <div class="benefits-box">
-            <div class="benefit">
-                <div class="icon-circle">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="benefit-text">
-                    <strong>Asesoría Personalizada:</strong>
-                    <p>Serás atendido por un experto en una llamada inicial para resolver cualquier duda que tengas sobre el proceso, explicándote todo paso a paso antes de avanzar.</p>
-                </div>
-            </div>
-            
-            <div class="benefit">
-                <div class="icon-circle">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="benefit-text">
-                    <strong>Seguridad y Transparencia:</strong>
-                    <p>Puedes interactuar y aclarar tus inquietudes vía WhatsApp. Si decides proceder, la autorización se realizará a través de una llamada grabada con tu asesor para garantizar tu seguridad.</p>
-                </div>
-            </div>
-        </div>
+    <section id="encuesta" class="survey-section">
 
         <!-- Grid: Encuesta + Asesor -->
         <div class="sidebar-wrapper">
@@ -1043,7 +666,7 @@
                 
                 <div id="surveyContainer">
                     
-                    <!-- ===== PASO 1 ===== -->
+                    <!-- ===== PASO 1 - ¡ESTO ES LO PRIMERO QUE VEN! ===== -->
                     <div id="step1" class="step-container step-visible">
                         <h3 class="step-title">1. ¿Actualmente tienes un cupo disponible?</h3>
                         <div class="btn-group">
@@ -1203,6 +826,62 @@
     </section>
 
     <!-- ========================================================== -->
+    <!-- STORYTELLING (AHORA ABAJO DE LA ENCUESTA) -->
+    <!-- ========================================================== -->
+    <div style="max-width: 896px; margin: 32px auto 0;">
+        <div style="background: #F9FAFB; border: 1px solid #F3F4F6; border-radius: 24px; padding: 28px 36px;">
+            <p style="font-size: 16px; line-height: 1.7; color: #4B5563; margin-bottom: 12px;">
+                <strong style="color: #111827;">¿Sabías que miles de colombianos</strong> terminan reportados en Datacrédito por compras innecesarias? Por la presión de usar su cupo en tiendas aliadas, adquieren deudas de ropa o lujos que no les generan ningún beneficio.
+            </p>
+            <p style="font-size: 16px; line-height: 1.7; color: #4B5563; margin-bottom: 12px;">
+                Por eso, adoptamos un sistema rápido de cambio directo. Ahora puedes tomar ese dinero, <strong style="color: #111827;">invertirlo en tu negocio, surtir tu mercancía o salir de deudas urgentes</strong> para sacarle mayor provecho.
+            </p>
+            <div style="background: #FFFFFF; border: 2px solid #d9ebff; border-radius: 16px; padding: 20px; margin-top: 12px; text-align: center;">
+                <p style="font-size: 16px; font-weight: 500; color: #1F2937; margin-bottom: 0;">
+                    Empezamos ayudando a 2.000 personas que hoy tienen un excelente historial de pago.
+                </p>
+                <span style="display: block; font-size: 22px; font-weight: 800; color: #005af5; background: #eef6ff; padding: 10px 20px; border-radius: 12px; border: 1px solid #d9ebff; margin-top: 10px; text-transform: uppercase; letter-spacing: -0.01em;">
+                    🚀 Segunda campaña: 1.000 cupos disponibles
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- CHECKLIST (ABAJO) -->
+    <!-- ========================================================== -->
+    <div style="max-width: 768px; margin: 32px auto 0;">
+        <h2 style="font-size: 28px; font-weight: 800; color: #111827; text-align: center; margin-bottom: 24px; letter-spacing: -0.02em;">La forma más inteligente de tener liquidez</h2>
+        
+        <div style="background: #F9FAFB; border: 1px solid #F3F4F6; border-radius: 24px; padding: 28px 36px; display: flex; flex-direction: column; gap: 20px;">
+            
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <i class="fas fa-check-circle" style="color: #22C55E; font-size: 28px; flex-shrink: 0; margin-top: 2px;"></i>
+                <div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 2px;">Sin tiendas obligatorias</h3>
+                    <p style="font-size: 16px; font-weight: 500; color: #4B5563; line-height: 1.5;">No te endeudes comprando ropa o lujos que no necesitas solo por gastar el cupo aprobado en establecimientos limitados.</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <i class="fas fa-check-circle" style="color: #22C55E; font-size: 28px; flex-shrink: 0; margin-top: 2px;"></i>
+                <div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 2px;">Invierte en lo tuyo</h3>
+                    <p style="font-size: 16px; font-weight: 500; color: #4B5563; line-height: 1.5;">Usa ese dinero en efectivo para surtir tu negocio propio, pagar proveedores o salir de deudas urgentes que no dan espera.</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <i class="fas fa-check-circle" style="color: #22C55E; font-size: 28px; flex-shrink: 0; margin-top: 2px;"></i>
+                <div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 2px;">Efectivo inmediato</h3>
+                    <p style="font-size: 16px; font-weight: 500; color: #4B5563; line-height: 1.5;">El proceso es 100% transparente. Compramos tu cupo y transferimos a tu cuenta bancaria de preferencia al instante.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
     <!-- FOOTER -->
     <!-- ========================================================== -->
     <footer class="footer">
@@ -1212,13 +891,12 @@
 </div>
 
 <!-- ============================================================ -->
-<!-- JAVASCRIPT - CON TODA LA LÓGICA ORIGINAL -->
+<!-- JAVASCRIPT -->
 <!-- ============================================================ -->
 <script>
     (function() {
         'use strict';
         
-        // ===== DATOS DE LA ENCUESTA =====
         var surveyData = {
             has_cupo: '',
             amount: '',
@@ -1272,7 +950,7 @@
             progressBar.style.width = progress + '%';
         }
         
-        // ===== MANEJAR SELECCIÓN DE OPCIONES =====
+        // ===== MANEJAR SELECCIÓN =====
         function handleSelection(stepId, key, value, nextStep) {
             surveyData[key] = value;
             
@@ -1282,25 +960,21 @@
                 var step5Desc = document.getElementById('step5Desc');
                 
                 if (value.indexOf('A.') === 0) {
-                    // Flujo Normal: Tiene Cupo
                     if (step2Title) step2Title.innerText = '2. ¿Cuánto tienes disponible actualmente en tu cupo?';
                     resetStep5Text();
                     showStep('step2');
                     return;
                 } else if (value.indexOf('B.') === 0) {
-                    // Flujo B: No tiene, quiere solicitar
                     if (step2Title) step2Title.innerText = '2. ¿Qué monto te gustaría solicitar?';
                     resetStep5Text();
                     showStep('step2');
                     return;
                 } else if (value.indexOf('C.') === 0) {
-                    // Flujo C: No recuerda (Verificación directa)
                     if (step5Title) step5Title.innerText = 'Verificación de Estado';
                     if (step5Desc) step5Desc.innerHTML = 'Completa tus datos para que tu asesor asignado <strong style="color:white;">verifique tu perfil en el sistema</strong> y evalúe la probabilidad de aprobación de tu cupo de forma segura.';
                     showStep('step5');
                     return;
                 } else if (value.indexOf('D.') === 0) {
-                    // Flujo D: Reportado (Rechazo empático)
                     showStep('stepRejected');
                     return;
                 }
@@ -1397,7 +1071,7 @@
             }
         }
         
-        // ===== INICIALIZAR EVENTOS =====
+        // ===== INICIALIZAR =====
         function init() {
             // Botones de la encuesta
             var surveyBtns = document.querySelectorAll('.survey-option');
@@ -1439,7 +1113,7 @@
                 });
             }
             
-            // Mostrar paso inicial
+            // Mostrar paso 1
             showStep('step1');
         }
         
